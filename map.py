@@ -5,7 +5,6 @@ _ = False
 mini_map = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,1],
-    [1,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,1],
     [1,_,_,_,_,_,1,1,1,_,1,1,1,_,_,_,_,1],
     [1,_,_,_,_,_,1,_,1,1,1,_,1,_,_,_,_,1],
     [1,_,_,_,_,_,1,_,_,_,_,_,1,_,_,_,_,1],
@@ -31,5 +30,6 @@ class Map:
                     self.world_map[(i,j)] = value
 
     def draw(self):
-        [pg.draw.rect(self.game.screen, 'darkgray', (pos[0] * 60, pos[1]*60,60,60),2)
-        for pos in self.world_map ]
+        for pos in self.world_map:
+            rect = pg.Rect(pos[0] * 70, pos[1] * 70, 70, 70)
+            pg.draw.rect(self.game.screen, 'darkgray', rect, 2)
