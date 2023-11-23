@@ -56,8 +56,19 @@ class RayCasting:
             else:
                 depth = depth_hor
 
+            #removing fishbowl effect
+            depth *= (math.cos(self.game.player.angle - ray_angle))
+
+            #projection
+            proj_height = SCREEN_DIST / (depth + 0.0001)
+
+            #drawing walls
+            color_intensity = min(255, max(0, int(255 / (1 * depth ** 5 * 0.00002))))
+            color = (color_intensity, color_intensity, color_intensity)
+            pg.draw.rect(self.game.screen, color, (ray * SCALE, HALF_HEIGHT - proj_height // 2, SCALE, proj_height))
+
             # drawing rays
-            pg.draw.line(self.game.screen,'yellow', (70 * ox, 70 * oy), (70 * ox + 70 * depth * cos_a, 70 * oy + 70 * depth * sin_a),2)
+            # pg.draw.line(self.game.screen,'yellow', (70 * ox, 70 * oy), (70 * ox + 70 * depth * cos_a, 70 * oy + 70 * depth * sin_a),2)
         #     print(f"Ray {ray}: Player Position ({ox}, {oy}), Drawing Line ({ox}, {oy}) to "
         #   f"({ox + depth * cos_a}, {oy + depth * sin_a})")
             
