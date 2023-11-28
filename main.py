@@ -22,6 +22,7 @@ class Game:
         self.global_event = pg.USEREVENT + 0
         pg.time.set_timer(self.global_event, 40)
         self.new_game()
+        self.sound.theme.play(loops=999)
         
     
     def new_game(self):
