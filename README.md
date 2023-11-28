@@ -22,7 +22,7 @@ DoomKnightDungeon (DKD) is a simple shooter game built using Python and Pygame. 
 
 ### Prerequisites
 
-- [Python](https://www.python.org/) (version 3.6 or higher)
+- [Python](https://www.python.org/) (version 2.5 or higher)
 - [Pygame](https://www.pygame.org/)
 
 ### Installation
