@@ -30,7 +30,7 @@ DoomKnightDungeon (DKD) is a simple shooter game built using Python and Pygame. 
 1. Clone the repository:
 
     ```bash
-    https://github.com/kczy19/DKD.git
+    https://github.com/kczy19/DoomKnightDungeon.git
     ```
 
 2. Install the required dependencies:
