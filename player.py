@@ -104,11 +104,12 @@ class Player:
 
     def mouse_control(self):
         mx, my = pg.mouse.get_pos()
-        if mx < MOUSE_BORDER_LEFT or mx > MOUSE_BORDER_RIGHT:
+        if mx < MOUSE_BORDER_LEFT or mx > MOUSE_BORDER_RIGHT or my < MOUSE_BORDER_TOP or my > MOUSE_BORDER_BOTTOM:
             pg.mouse.set_pos([HALF_WIDTH, HALF_HEIGHT])
         self.rel = pg.mouse.get_rel()[0]
         self.rel = max(-MOUSE_MAX_REL, min(MOUSE_MAX_REL, self.rel))
         self.angle += self.rel * MOUSE_SENSITIVITY * self.game.delta_time
+
 
     def update(self):
         self.movement()

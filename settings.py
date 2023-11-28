@@ -3,7 +3,7 @@ import math
 
 #resolution settings
 
-RES = WIDTH, HEIGHT = 1920 , 1080
+RES = WIDTH, HEIGHT = 1080 , 720
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
 FPS = 100
